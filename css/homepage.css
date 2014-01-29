@@ -1,0 +1,112 @@
+.homepage {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.homepage .top {
+	border-bottom: 1px solid #f4f4f4;
+	padding-bottom: 35px;
+}
+.login-search, .banner, .welcome, .why-to-join {
+	float: left;
+}
+.login-search {
+	padding: 0 99px 0 30px;
+}
+.quick-search {
+	margin: 30px 0 0 0;
+} 
+.login h4, .quick-search h4, .welcome h3, .why-to-join h3, .follow-us h3, .send-message h3 {
+	font-family: 'futuracondensed_medium';
+	text-transform: uppercase;
+	font-size: 30px;
+	font-weight: normal;
+	color: #b1a0a5;
+	margin: 0 0 30px 0;
+}
+.login h4 span, .quick-search h4 span, .welcome h3 span, .why-to-join h3 span, .follow-us h3 span, .send-message h3 span {
+	color: #cfc4c3;
+}
+.login-form, .quicksearch-form {
+	padding: 8px 0;
+	margin: 10px 0 5px;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.login-form table tr td, .quicksearch-form table tr td {
+	padding: 3px;
+}
+.login .actions, .quick-search .actions {
+	text-align: right;
+}
+
+.banner ul li {
+	display: inline-block;
+	margin: 0 0 0 5px;
+}
+.banner ul li:first-child {
+	margin: 0;
+}
+.homepage .middle {
+	padding-top: 25px;
+	border-bottom: 1px solid #f4f4f4;
+	padding-bottom: 35px;
+}
+.homepage .bottom {
+	padding-top: 30px;
+}
+.welcome, .how-to-join, .why-to-join, .follow-us, .send-message {
+	width: 48%;
+}
+.welcome p.caption {
+	/*font-family: 'Tangerine', cursive;*/
+	font-family: 'Sacramento', cursive;
+	font-size: 26px;
+	line-height: 32px;
+	margin-bottom: 20px;
+}
+.how-to-join, .follow-us, .send-message {
+	float: right;
+}
+.how-to-join ul li {
+	padding: 20px 0;
+	border-top: 1px solid #f4f4f4;
+}
+.how-to-join ul li:first-child {
+	border-top: none;
+	padding-top: 0;
+}
+.how-to-join ul li .step {
+	padding-left: 60px;
+}
+.how-to-join ul li .step span {
+	display: block;
+	color: #cfc4c3;
+	font-family: 'futuracondensed_medium';
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: normal;
+	margin-bottom: 15px;
+}
+.how-to-join ul li .step p {}
+.how-to-join ul li .step.one, .how-to-join ul li .step.two, .how-to-join ul li .step.three {
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+.how-to-join ul li .step.one {
+	background-image: url(../images/1.png);
+}
+.how-to-join ul li .step.two {
+	background-image: url(../images/2.png);
+}
+.how-to-join ul li .step.three {
+	background-image: url(../images/3.png);
+}
+.send-message .input-text {
+	margin-bottom: 5px;
+}
+.send-message .input-textarea {
+	margin-bottom: 8px;
+}
+.send-message .actions {
+	text-align: right;
+}

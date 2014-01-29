@@ -1,0 +1,168 @@
+.myaccount {
+	margin-top: 30px;
+}
+.myaccount .pager {
+	margin: 10px 0;
+}
+.pager span.info {
+	display: block;
+	float: left;
+	margin-top: 10px;
+}
+.pager .pagination {
+	margin: 0 auto;
+	width: 210px;
+	padding-top: 10px;
+	text-align: center;
+}
+.pager .pagination a {
+	display: inline-block;
+	margin: 0 2px;
+}
+.pager .shown {
+	float: right;
+}
+.pager .shown a {
+	display: inline-block;
+	margin-top: 10px;
+}
+.members ul li.item {
+	float: left;
+	margin: 0 17px 20px;
+}
+.member {
+	position: relative;
+}
+.member a {
+	display: block;
+}
+.member span.lbl-newmember {
+	display: block;
+	position: absolute;
+	top: -10px;
+	right: -13px;
+	width: 27px;
+	height: 27px;
+	background: url(../images/new-member.png) no-repeat center center;
+}
+.member a.member-image {
+	width: 125px;
+	height: 125px;
+	overflow: hidden;
+}
+.member a.member-name {
+	font-size: 12px;
+	font-weight: bold;
+	background-position: left center;
+	background-repeat: no-repeat;
+	color: #7e696d;
+	margin-top: 3px;
+	padding: 5px 0 5px 28px;
+}
+.member a.male {
+	background-image: url(../images/male.png);
+}
+.member a.female {
+	background-image: url(../images/female.png);
+}
+.profile-pict {
+	float: left;
+}
+.member-desc {
+	float: right;
+	width: 602px;
+}
+.member-name {
+	color: #b1a0a5;
+	font-family: 'futuracondensed_medium';
+	font-size: 20px;
+	padding-left: 55px;
+	height: 41px;
+	line-height: 41px;
+	border-bottom: 1px solid #f4f4f4;
+	padding-bottom: 10px;
+}
+.member-name.male {
+	background: url(../images/male.png) no-repeat left top;
+}
+.member-name.female {
+	background: url(../images/female.png) no-repeat left top;
+}
+.member-name span.online-now {
+	display: inline-block;
+	width: 15px;
+	height: 16px;
+	background: url(../images/online.png) no-repeat left center;
+	margin-left: 30px;
+}
+.member-info {
+	margin-top: 5px;
+}
+.member-info a.link-edit, .personal-info a.link-edit-personalinfo {
+	display: block;
+	float: right;
+	color: #8a697c;
+}
+.member-info table tr td {
+	padding: 3px 5px;
+}
+.member-info table tr td span.last-login {
+	font-weight: bold;
+}
+.member-info table tr td .input-text.date, .member-info table tr td a.date {
+	float: left;
+}
+.member-info table tr td a.date {
+	 display: block;
+ }
+.personal-info {
+	margin-top: 50px;
+}
+.personal-info h3 {
+	font-family: 'futuracondensed_medium';
+	text-transform: uppercase;
+	font-size: 30px;
+	font-weight: normal;
+	color: #b1a0a5;
+	margin: 0 0 30px 0;
+}
+.personal-info h3 span {
+	color: #cfc4c3;
+}
+.personal-info .select-option {
+	float: none;
+}
+.personal-info .select-option select {
+	margin: 0;
+	width: 96.2%;
+	background: #fff;
+}
+/* Generic Utility */
+.hide { position: absolute; top: -9999px; left: -9999px; }
+
+/* Specific to example two */
+
+#example-two .list-wrap { background: #f1f1f1; padding: 10px; margin: 0 0 15px 0; }
+
+#example-two ul { list-style: none; }
+#example-two ul li a { display: block; border-bottom: 1px solid #666; padding: 4px; color: #666; }
+#example-two ul li a:hover { background: #333; color: white; }
+#example-two ul li:last-child a { border: none; }
+
+#example-two .nav { overflow: hidden; }
+#example-two .nav li { 
+	float: left; margin: 0 1px 0 0; 
+	-moz-border-radius: 10px 10px 0 0;
+	-webkit-border-radius: 10px 10px 0 0;
+	border-radius: 10px 10px 0 0;
+	overflow: hidden;
+}
+#example-two .nav li.last { margin-right: 0; }
+#example-two .nav li a { display: block; padding: 0 20px; background: #cfc4c3; color: white; font-size: 24px; text-align: center; border: 0; font-family: 'futuracondensed_medium';
+	text-transform: uppercase;
+	height: 30px;
+	line-height: 33px;
+}
+
+#example-two li a.current,#example-two li a.current:hover { background-color: #8a697c !important;}
+#example-two .nav li a:hover, #example-two .nav li a:focus { background: #999;}
