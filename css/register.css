@@ -1,0 +1,38 @@
+.register {
+	padding-top: 20px;
+}
+table#form-register {
+	width: 100%;
+}
+table#form-register tr td {
+	padding: 3px 5px;
+}
+table#form-register tr td.lbl-form {
+	width: 100px;
+}
+table#form-register tr td .input-text {
+	width: 50%;
+}
+table#form-register tr td .input-text.date {
+	float: left;
+}
+.question {
+	margin-bottom: 10px;
+}
+.question .input-text input[type="text"] {
+	width: 100%;
+}
+.question .input-textarea textarea {
+	width: 99%;
+	resize:none;
+}
+.list-question {
+	margin-top: 30px;
+}
+.select-option {
+	float: none;
+	
+}
+.select-option select {
+	width: 100%;
+}

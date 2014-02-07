@@ -72,6 +72,7 @@ h1.logo {
 }
 .input-text input[type="text"], .input-text input[type="password"], textarea {
 	border: none;
+	width: 99%;
 }
 .input-textarea textarea {
 	width: 99%;
