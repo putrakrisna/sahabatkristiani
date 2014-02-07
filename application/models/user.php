@@ -3,6 +3,7 @@
 class User extends CI_Model{
 	private $table;
 	private $id;
+//	private $login;
 	
     function __construct(){
         parent::__construct();
@@ -10,13 +11,13 @@ class User extends CI_Model{
         $this->id = strtolower(__CLASS__).'_id';
     }
     
-    function login($user_login, $password){
+    function login($email, $password){
       $this -> db -> select('*');
       $this -> db -> from('user');
-      $this -> db -> where('user_login', $user_login);
-      $this -> db -> where('password', MD5($password));
+      $this -> db -> where('user_email', $email);
+      $this -> db -> where('user_password', MD5($password));
+      $this -> db -> where('user_is_enabled', '1');
       $this -> db -> limit(1);
-
       $query = $this -> db -> get();
 
       if($query -> num_rows() == 1)
@@ -27,6 +28,16 @@ class User extends CI_Model{
       {
         return false;
       }
+    }
+    
+    function cek_login() {
+        $login = $this->session->userdata('logged_in');
+        if(empty($login)){
+            return FALSE;
+        }
+        else{
+            return TRUE;
+        }
     }
 
 
@@ -48,9 +59,9 @@ class User extends CI_Model{
          if(empty($data)):
             return FALSE;
          else:
+//              $this->db->trans_start();
             $this->db->insert($this->table,$data);
-            $id = $this->db->insert_id();
-            return $id;
+            return $this->db->insert_id();
         endif;
     }
     

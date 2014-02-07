@@ -37,8 +37,7 @@ class User_detail extends CI_Model{
             return FALSE;
          else:
             $this->db->insert($this->table,$data);
-            $id = $this->db->insert_id();
-            return $id;
+            return $this->db->insert_id();
         endif;
     }
     

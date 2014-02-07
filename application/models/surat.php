@@ -18,6 +18,15 @@ class Surat extends CI_Model{
         endif;
     }
     
+    function get_by($field,$value,$limit=null,$offset=null){
+        $this->db->where($field,$value);
+        if(empty($limit) and empty($offset)):
+            return $this->db->get($this->table);
+        else:
+            return $this->db->get($this->table,$limit,$offset);
+        endif;
+    }
+    
     function get_by_id($id){
         $this->db->where($this->id,$id);
         return $this->db->get($this->table);
