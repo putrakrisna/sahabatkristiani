@@ -4,7 +4,9 @@ class Account extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('myaccount');
+            $header['title']    = "My Account";
+            $data['header']     = $header;
+            $this->load->view('myaccount',$data);
 	}
 }
 
