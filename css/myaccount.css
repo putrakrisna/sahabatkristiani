@@ -67,6 +67,42 @@
 }
 .profile-pict {
 	float: left;
+	width: 298px;
+}
+.profile-pict-large {
+	height: 298px;
+	overflow: hidden;
+}
+.profile-pict-large img {
+	width: 100%;
+	height: 100%;
+}
+.profile-pict-thumbnail img {
+	width: 20%;
+	height: 20%;
+}
+.link-upload {
+	text-align: center;
+	margin: 5px 0;
+}
+#slides {
+      display:none;
+	  position:relative;
+}
+#slides .slidesjs-navigation {
+  position:absolute;
+  top:40px;
+  z-index:10;
+  height: 30px;
+  width: 30px;
+  display:block;  
+  cursor: pointer;
+}
+#slides .slidesjs-previous {
+  left:0;
+}
+#slides .slidesjs-next {
+	right: 0;
 }
 .member-desc {
 	float: right;
