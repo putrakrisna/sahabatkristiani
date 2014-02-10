@@ -1,5 +1,5 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Sahabat Kristiani - Homepage</title>
+        <title>Sahabat Kristiani <?php echo isset($header['title']) ? ' - '.$header['title'] : ' ' ?></title>
 	<!--<link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>-->
 	<link href='http://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="<?php echo base_url('css/reset.css') ?>" type="text/css" media="screen"/>
