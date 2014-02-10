@@ -30,7 +30,24 @@
 		<h2 class="page-title">My Account</h2>
 		<div class="myaccount">
 			<div class="profile-pict">
-				<a href="#"><img src="<?php echo base_url('images/pp.jpg') ?> "/></a>
+				<div class="profile-pict-large"><img src="images/pp.jpg"/></div>
+				<div class="link-upload"><button>Upload Photo</button></div>
+				<div class="profile-pict-thumbnail" id="slides">
+					<div>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+					</div>
+					<div>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+					</div>
+					<a class="slidesjs-previous slidesjs-navigation" href="#">Prev</a>
+					<a class="slidesjs-next slidesjs-navigation" href="#">Next</a>
+				</div>
 			</div>
 			<div class="member-desc">
 				<div class="member-name male">Nama / Umur / Yogyakarta <span class="online-now"></span></div>
@@ -42,9 +59,10 @@
 							<tr>
 								<td class="lbl-form"><span>Tanggal Lahir:</span></td>
 								<td>
-									<div class="input-text date"><input type="text" name="txtTglLahir"/></div>
-                                                                        <a href="#"><img src="<?php echo base_url('images/date.png') ?> "/></a>
-								</td>
+									<div class="input-text date">
+										<input type="text" name="txtTglLahir" class="date-pick"/>
+									</div>
+                                </td>
 							</tr>
 							<tr>
 								<td class="lbl-form"><span>Lokasi:</span></td>

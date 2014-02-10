@@ -17,7 +17,7 @@
 		<!--Register-->
 		<h2 class="page-title">Register</h2>
 		<div class="register">
-			<?php echo validation_errors() ?>
+			<div class="error-validation"><?php echo validation_errors() ?></div>
             <form method="POST">
 			<table id="form-register">
 				<tbody>
@@ -55,8 +55,7 @@
 					<tr>
 						<td class="lbl-form"><span>Tanggal Lahir:</span></td>
 						<td>
-							<div class="input-text date"><input type="text" name="txtTglLahir"/></div>
-							<a href="#"><img src="<?php echo base_url();?>images/date.png"/></a>
+							<div class="input-text date"><input type="text" name="txtTglLahir" class="date-pick"/></div>
 							<div class="clear"></div>
 						</td>
 					</tr>

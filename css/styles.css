@@ -129,6 +129,21 @@ h2.page-title {
 	border-bottom: 1px solid #f4f4f4;
 	padding-bottom: 25px;
 } 
+.date-pick, .dp-choose-date {
+	display: inline-block;
+}
+.date-pick {
+	width: 80% !important;
+}
+.dp-choose-date {
+	text-indent: -9999999px;
+	background-image: url(../images/date.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 100% auto;
+	width: 24px;
+	height: 26px;
+}
 #footer {
 	padding: 5px 10px 10px 10px;
 	border-top: 1px solid #f4f4f4;
