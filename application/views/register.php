@@ -80,7 +80,7 @@
 				<div class="question">
                                     <p><?php echo $pertanyaan['pertanyaan_isi']; ?></p>
 	    		 	<div class="select-option">
-                                    <select name="pertanyaan_<?php echo $pertanyaan['pertanyaan_id']?>">
+                                    <select name="pertanyaan[<?php echo $pertanyaan['pertanyaan_id']?>]">
                                         <?php foreach($pilihan_all[$pertanyaan['pertanyaan_id']] as $pilihan): ?>
                                         <option value="<?php echo $pilihan['pilihan_id']; ?>"><?php echo $pilihan['pilihan_isi']; ?></option>
                                         <?php endforeach; ?>

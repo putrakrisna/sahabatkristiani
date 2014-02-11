@@ -7,8 +7,12 @@
     
 <body>
 <div id="container">
-	<?php $this->load->view('common/header')?>
-	<?php $this->load->view('common/nav')?>
+    <div id="header">
+        <?php $this->load->view('common/header') ?>
+    </div>
+    <div id="nav">
+        <?php $this->load->view('common/nav') ?>
+    </div>
 	<div id="content">
 		<!--HOMEPAGE-->
 		<div class="homepage">

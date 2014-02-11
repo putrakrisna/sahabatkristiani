@@ -103,30 +103,18 @@
 		    			<div id="umum">
 		    				<a href="#" class="link-edit-personalinfo">Edit Info</a>
 		    				<div class="clear"></div>
-		    				<div class="question">
-		        		 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry?</p>
+                                                <?php foreach ($pertanyaan_all as $key => $value):?>
+			        		 <div class="question">
+                                                     <p><?php echo $value; ?></p>
 			        		 	<div class="select-option">
 									<select>
-										<option>Jawaban</option>
+                                                                <?php foreach($pilihan[$key] as $key1 => $value1): ?>
+                                                                            <option value="<?php echo $key1; ?>" <?php if($jawaban[$key] == $key1)  echo "selected";?> ><?php echo $value1; ?></option>
+                                                                <?php endforeach; ?>
 									</select>
 								</div>
 		        		 	</div>
-		        		 	<div class="question">
-		        		 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry?</p>
-			        		 	<div class="select-option">
-									<select>
-										<option>Jawaban</option>
-									</select>
-								</div>
-		        		 	</div>
-		        		 	<div class="question">
-		        		 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry?</p>
-			        		 	<div class="select-option">
-									<select>
-										<option>Jawaban</option>
-									</select>
-								</div>
-		        		 	</div>
+                                                <?php endforeach; ?>
 			        		<div class="actions">
 								<input type="submit" name="btnSimpan" class="button" value="Simpan"/>
 								<button class="button" name="btnBatal">Batal</button>
@@ -234,14 +222,7 @@
 		        		 <div id="kesukaan" class="hide">
 		        		 	<a href="#" class="link-edit-personalinfo">Edit Info</a>
 		        		 	<div class="clear"></div>
-			        		 <div class="question">
-		        		 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry?</p>
-			        		 	<div class="select-option">
-									<select>
-										<option>Jawaban</option>
-									</select>
-								</div>
-		        		 	</div>
+                                                
 		        		 	<div class="question">
 		        		 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry?</p>
 			        		 	<div class="select-option">
