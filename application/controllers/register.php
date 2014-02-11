@@ -41,7 +41,7 @@ class Register extends CI_Controller {
                     $pertanyaan = array('user_id' => $user_id,'pertanyaan_id' => $key, 'pilihan_id' => $val);
                     $this->grocery_crud_model->db_insert($pertanyaan);
                 }
-                print_r($user_detail_id);die;
+                $this->sukses();
             }
             else
             {
@@ -58,6 +58,13 @@ class Register extends CI_Controller {
                 $this->load->view('register',$data);
             }
 	}
+        
+        public function sukses()
+        {
+            $header['title']    = "Pencarian";
+            $data['header']     = $header;
+            $this->load->view('register_sukses',$data);
+        }
 }
 
 /* End of file register.php */
