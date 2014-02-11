@@ -1,7 +1,7 @@
 <?php  $login = $this->session->userdata('logged_in');?>
 <?php if(!$login['user_id']):?>
 <div class="login">
-    <form method="POST" action="" autocomplete="off" accept-charset="utf-8">
+    <form method="POST" action=""  accept-charset="utf-8">
         <h4>Login <span>Member</span></h4>
         <?php echo validation_errors(); ?>
         <div class="login-form">

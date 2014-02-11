@@ -17,11 +17,56 @@
             <?php $this->load->view('common/nav') ?>
 	</div>
 	<div id="content">
-	<!--bagian ini untuk kontenya--> 
-        
-        
-        <!--end content-->
-        </div>
+		<h2 class="page-title">Kotak Masuk</h2>
+		<div class="myaccount">
+			<div class="pager">
+				<span class="info">Anda memiliki 200 pesan | Pesan 1-50 dari 200</span>
+				<div class="shown">
+					<div class="select-option">
+						<select>
+							<option>20</option>
+						</select>
+					</div>
+					<a href="#">Tampilkan Semua</a>
+				</div>
+				<div class="pagination">
+					<span>Halaman</span>
+					<a href="#"><<</a>
+					<a href="#"><</a>
+					<a href="#">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#">6</a>
+					<a href="#">></a>
+					<a href="#">>></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="list-message">
+			<table id="list-message inbox">
+				<thead>
+					<tr>
+						<th class="checkbox"><input type="checkbox" name="selectMessage"/></th>
+						<th>Subject</th>
+						<th>Pengirim</th>
+						<th>Tanggal/Waktu</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="checkbox"><input type="checkbox" name="selectMessage"/></td>
+						<td><a href="#">Lorem ipsum dollor sit amet</a></td>
+						<td>Username</td>
+						<td>08:00</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="message-action"><a href="#">Delete</a></div>
+			</div>
+		</div>
+	</div>
 	<div id="footer">
             <?php $this->load->view('common/footer') ?>
 	</div>

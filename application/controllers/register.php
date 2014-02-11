@@ -9,9 +9,8 @@ class Register extends CI_Controller {
 	{
             $this->load->library('form_validation');
             if($this->input->post('btnSimpan')){ 
-                $this->form_validation->set_rules('txtEmail','email','required|valid_email');
+                $this->form_validation->set_rules('txtEmail','email','required|valid_email|is_unique[user.user_email]');
                 $this->form_validation->set_rules('txtFirstName','First Name','required|trim');
-//                $this->form_validation->set_rules('txtLastName','Last Name','required|trim');
                 $this->form_validation->set_rules('txtPassword','Password','required');
                 $this->form_validation->set_rules('txtConfirmPassword','Password Confirmation','required|matches[txtPassword]');
                 $this->form_validation->set_rules('txtLokasi','Lokasi','required|trim');
@@ -30,10 +29,18 @@ class Register extends CI_Controller {
                );
                $user_id = $this->user->insert($user);
                
-//               insert ke tabel user_detail
+//               insert user detail
                 $this->load->model('user_detail');
                 $user_detail    = array('user_id' => $user_id);
                 $user_detail_id = $this->user_detail->insert($user_detail);
+                
+//                insert jawaban pertanyaan
+                $this->load->model('grocery_crud_model');
+                $this->grocery_crud_model->set_basic_table('user_pertanyaan');
+                foreach($post['pertanyaan'] as $key => $val){
+                    $pertanyaan = array('user_id' => $user_id,'pertanyaan_id' => $key, 'pilihan_id' => $val);
+                    $this->grocery_crud_model->db_insert($pertanyaan);
+                }
                 print_r($user_detail_id);die;
             }
             else
