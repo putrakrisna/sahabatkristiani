@@ -10,10 +10,8 @@
     <div id="header">
         <?php $this->load->view('common/header') ?>
     </div>
-    <div id="nav">
-        <?php $this->load->view('common/nav') ?>
-    </div>
-	<div id="content">
+    <?php $this->load->view('common/nav') ?>
+    <div id="content">
 		<!--HOMEPAGE-->
 		<div class="homepage">
 			<div class="top">

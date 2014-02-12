@@ -13,13 +13,15 @@
 	<div id="header">
             <?php $this->load->view('common/header') ?>
 	</div>
-	<div id="nav">
-            <?php $this->load->view('common/nav') ?>
-	</div>
+	<?php $this->load->view('common/nav') ?>
 	<div id="content">
-	<!--bagian ini untuk kontenya--> 
-        
-        
+		<!--bagian ini untuk kontenya--> 
+        <h2 class="page-title">TERIMA KASIH</h2>
+        <div class="sukses-register">
+	        <div class="text">
+		        <p>Terima kasih anda sudah mendaftar untuk menjadi bagian dari SAHABATKRISTIANI, silakan melakukan konfirmasi melalui email yang kami kirimkan ke alamat email yang anda daftarkan. Kami akan mengevaluasi data-data yang anda berikan, jika ada pertanyaan yang ingin ditanyakan, silakan menghubungi kami melalui email: <a href="mailto:sawokembar@gmail.com">sawokembar@gmail.com</a> </p>
+	        </div>
+        </div>
         <!--end content-->
         </div>
 	<div id="footer">
