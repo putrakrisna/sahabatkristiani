@@ -27,8 +27,9 @@ h1.logo, .header-menu {
 h1.logo {
 	text-indent: -999999px;
 	background: url(../images/logo.png) no-repeat center center;
-	width: 404px;
-	height: 138px;
+	width: 284px;
+	height: 186px;
+	margin:0 50px;
 }
 .header-menu ul li {
 	font-family: 'futuracondensed_medium';
@@ -40,6 +41,9 @@ h1.logo {
 }
 .header-menu ul li a {
 	color: #7e696d;
+}
+input[type="checkbox"] {
+	margin-left: 0;
 }
 #nav {
 	margin: 10px 0 30px 0;
@@ -121,6 +125,11 @@ a.button {
 	width:240px;
 	text-align: center;
 }
+.actions a.button {
+	display: inline-block;
+	width: auto;
+	padding: 10px;
+}
 h2.page-title {
 	font-size: 34px;
 	color: #7e696d;
@@ -143,6 +152,38 @@ h2.page-title {
 	background-size: 100% auto;
 	width: 24px;
 	height: 26px;
+}
+.text {
+	margin-top: 20px;
+}
+.text p {
+	line-height: 20px;
+}
+.list-message {
+	
+}
+.list-message table {
+	width: 100%;
+	border-bottom: 1px solid #dadada;
+}
+.list-message table thead tr th {
+	border-bottom: 2px solid #999;
+}
+.list-message table tbody tr td {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.list-message table thead tr th.checkbox,
+.list-message table tbody tr td.checkbox {
+	width: 30px;
+	text-align: center;
+}
+#list-message {
+	width: 100%;
+}
+.message-action {
+	margin: 0 5px;
+	padding-top: 10px;	
 }
 #footer {
 	padding: 5px 10px 10px 10px;

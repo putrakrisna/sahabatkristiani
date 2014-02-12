@@ -10,13 +10,14 @@
 	<div id="header">
             <?php $this->load->view('common/header') ?>
 	</div>
-	<div id="nav">
-		<?php $this->load->view('common/nav') ?>
-	</div>
+	<?php $this->load->view('common/nav') ?>
 	<div id="content">
 		<!--Register-->
 		<h2 class="page-title">Register</h2>
 		<div class="register">
+			<div class="text">
+				<p>Bergabunglah bersama kami di SAHABATKRISTIANI.COM dan temukan sahabat-sahabat dalam satu kasih Tuhan Yesus Kristus. Setelah mendaftar, anda akan diberikan kesempatan untuk mencoba semua fitur yang ada dalam website secara gratis selama 1 bulan penuh.</p>
+			</div>
 			<div class="error-validation"><?php echo validation_errors() ?></div>
             <form method="POST">
 			<table id="form-register">
@@ -76,11 +77,29 @@
 						</td>
 					</tr>
 					<tr>
-						<td class="lbl-form"><span>Photo Profile:</span></td>
-						<td><button class="btn-upload">Upload Photo</button></td>
+						<td></td>
+						<td>
+							<input type="checkbox" name="checkAgree" class="checkbox"/>
+							<span>Saya sudah membaca, mengerti dan setuju untuk memenuhi <a href="#">Syarat dan kondisi</a> dalam SAHABATKRISTIANI</span>
+						</td>
 					</tr>
 				</tbody>
-			</table>
+			</table><br/>
+			<!--<table id="form-register">
+			<tr>
+				<td class="lbl-form"></td>
+				<td>
+					<div class="actions">
+						<a href="#" class="button">Langkah Sebelumnya</a>
+						<a href="#" class="button">Langkah Selanjutnya</a>
+					</div>
+				</td>
+			</tr>
+			
+			</table>-->
+			<br/>
+			<h2 class="page-title">Pertanyaan</h2>
+			<div class="text">Silakan menjawab pertanyaan-pertanyaan berikut, yang sesuai dengan diri anda. Jawaban anda akan menjadi bagian utama dari profil anda di SAHABATKRISTEN yang bisa dibaca oleh anggota yang lain. Anda bisa memperbaharui jawaban anda kapan saja.</div>
 			<div class="list-question">
                             <?php foreach($pertanyaan_all as $pertanyaan): ?>
 				<div class="question">

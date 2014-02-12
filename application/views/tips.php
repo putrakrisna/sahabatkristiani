@@ -13,9 +13,7 @@
 	<div id="header">
             <?php $this->load->view('common/header') ?>
 	</div>
-	<div id="nav">
-            <?php $this->load->view('common/nav') ?>
-	</div>
+	<?php $this->load->view('common/nav') ?>
 	<div id="content">
 	<!--bagian ini untuk kontenya--> 
         

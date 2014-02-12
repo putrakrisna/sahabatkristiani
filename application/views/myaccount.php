@@ -23,9 +23,7 @@
 	<div id="header">
             <?php $this->load->view('common/header') ?>
 	</div>
-	<div id="nav">
-            <?php $this->load->view('common/nav') ?>
-	</div>
+	<?php $this->load->view('common/nav') ?>
 	<div id="content">
 		<h2 class="page-title">My Account</h2>
 		<div class="myaccount">
