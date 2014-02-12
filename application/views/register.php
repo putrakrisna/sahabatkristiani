@@ -45,12 +45,12 @@
 							<div class="input-text"><input type="text" name="txtFirstName" value="<?php echo set_value('txtFirstName', '') ?>"/></div>
 						</td>
 					</tr>
-<!--					<tr>
-						<td class="lbl-form"><span>First Name</span></td>
+					<tr>
+						<td class="lbl-form"><span>Last Name</span></td>
 						<td>
 							<div class="input-text"><input type="text" name="txtLastName" value="<?php echo set_value('txtLastName', '') ?>"/></div>
 						</td>
-					</tr>-->
+					</tr>
 					
 					<tr>
 						<td class="lbl-form"><span>Tanggal Lahir:</span></td>
@@ -61,14 +61,16 @@
 					</tr>
 					<tr>
 						<td class="lbl-form"><span>Lokasi:</span></td>
-						<td><div class="input-text"><input type="text" name="txtLokasi" value="<?php echo set_value('txtLokasi', '') ?>"/></div></td>
+                                                <td><div class="select-option"><?php echo form_dropdown('slcKota', $provinsi_all) ?></div></td>
+						<!--<td><div class="input-text"><input type="text" name="slcKota" value="<?php echo set_value('slcKota', '') ?>"/></div></td>-->
 					</tr>
 					<tr>
 						<td class="lbl-form"><span>Gender:</span></td>
 						<td>
 							<div class="select-option">
                                                             <select name="slcGender">
-									<option>Men</option>
+                                                                <option value="pria">Pria</option>
+                                                                <option value="wanita">Wanita</option>
 								</select>
 							</div>
 						</td>
@@ -91,7 +93,7 @@
 			</div>
 			<div class="actions">
 				<input type="submit" name="btnSimpan" class="button" value="Simpan"/>
-				<button class="button" name="btnBatal">Batal</button>
+                                <a class="button" href="<?php echo site_url(); ?>" >Batal</a>
 			</div>
                     </form>
 		</div>
