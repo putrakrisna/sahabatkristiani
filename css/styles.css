@@ -27,8 +27,9 @@ h1.logo, .header-menu {
 h1.logo {
 	text-indent: -999999px;
 	background: url(../images/logo.png) no-repeat center center;
-	width: 404px;
-	height: 138px;
+	width: 284px;
+	height: 186px;
+	margin:0 50px;
 }
 .header-menu ul li {
 	font-family: 'futuracondensed_medium';
