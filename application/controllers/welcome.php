@@ -25,7 +25,12 @@ class Welcome extends CI_Controller {
                 }
                 elseif ($this->input->post('btnSearch')) {
                     //bagian pencarian cepat
-//                    echo "search";die;
+                    $search['gender']       = $this->input->post('gender');
+                    $search['start_age']    = $this->input->post('start_age');
+                    $search['end_age']      = $this->input->post('end_age');
+                    $this->session->set_userdata('search',$search);
+                    
+                    print_r($this->input->post());die;
                 }
             }
             else

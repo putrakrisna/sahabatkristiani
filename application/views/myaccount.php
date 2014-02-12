@@ -30,7 +30,24 @@
 		<h2 class="page-title">My Account</h2>
 		<div class="myaccount">
 			<div class="profile-pict">
-				<a href="#"><img src="<?php echo base_url('images/pp.jpg') ?> "/></a>
+				<div class="profile-pict-large"><img src="images/pp.jpg"/></div>
+				<div class="link-upload"><button class="btn-upload">Upload Photo</button></div>
+				<div class="profile-pict-thumbnail" id="slides">
+					<div>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+					</div>
+					<div>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+						<img src="<?php echo base_url('images/pp.jpg');?>"/>
+					</div>
+					<a class="slidesjs-previous slidesjs-navigation" href="#">Prev</a>
+					<a class="slidesjs-next slidesjs-navigation" href="#">Next</a>
+				</div>
 			</div>
 			<div class="member-desc">
 				<div class="member-name male">Nama / Umur / Yogyakarta <span class="online-now"></span></div>
@@ -42,9 +59,10 @@
 							<tr>
 								<td class="lbl-form"><span>Tanggal Lahir:</span></td>
 								<td>
-									<div class="input-text date"><input type="text" name="txtTglLahir"/></div>
-                                                                        <a href="#"><img src="<?php echo base_url('images/date.png') ?> "/></a>
-								</td>
+									<div class="input-text date">
+										<input type="text" name="txtTglLahir" class="date-pick"/>
+									</div>
+                                </td>
 							</tr>
 							<tr>
 								<td class="lbl-form"><span>Lokasi:</span></td>
@@ -85,30 +103,18 @@
 		    			<div id="umum">
 		    				<a href="#" class="link-edit-personalinfo">Edit Info</a>
 		    				<div class="clear"></div>
-		    				<div class="question">
-		        		 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry?</p>
+                                                <?php foreach ($pertanyaan_all as $key => $value):?>
+			        		 <div class="question">
+                                                     <p><?php echo $value; ?></p>
 			        		 	<div class="select-option">
 									<select>
-										<option>Jawaban</option>
+                                                                <?php foreach($pilihan[$key] as $key1 => $value1): ?>
+                                                                            <option value="<?php echo $key1; ?>" <?php if($jawaban[$key] == $key1)  echo "selected";?> ><?php echo $value1; ?></option>
+                                                                <?php endforeach; ?>
 									</select>
 								</div>
 		        		 	</div>
-		        		 	<div class="question">
-		        		 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry?</p>
-			        		 	<div class="select-option">
-									<select>
-										<option>Jawaban</option>
-									</select>
-								</div>
-		        		 	</div>
-		        		 	<div class="question">
-		        		 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry?</p>
-			        		 	<div class="select-option">
-									<select>
-										<option>Jawaban</option>
-									</select>
-								</div>
-		        		 	</div>
+                                                <?php endforeach; ?>
 			        		<div class="actions">
 								<input type="submit" name="btnSimpan" class="button" value="Simpan"/>
 								<button class="button" name="btnBatal">Batal</button>
@@ -216,14 +222,7 @@
 		        		 <div id="kesukaan" class="hide">
 		        		 	<a href="#" class="link-edit-personalinfo">Edit Info</a>
 		        		 	<div class="clear"></div>
-			        		 <div class="question">
-		        		 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry?</p>
-			        		 	<div class="select-option">
-									<select>
-										<option>Jawaban</option>
-									</select>
-								</div>
-		        		 	</div>
+                                                
 		        		 	<div class="question">
 		        		 		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry?</p>
 			        		 	<div class="select-option">

@@ -19,15 +19,74 @@ class Examples extends CI_Controller {
 		$config['dbcollat'] = "utf8_general_ci";
 
 		$this->load->database($config);
-		$this->load->helper('url');
+		//$this->load->helper('url');
 
 		$this->load->library('grocery_CRUD');
 	}
 
 	public function _example_output($output = null)
 	{
-		$this->load->view('admin/example.php',$output);
+		$this->load->view('admin/example',$output);
 	}
+        
+        public function pilihan() {
+            try{
+			$crud = new grocery_CRUD();
+
+			$crud->set_theme('datatables');
+			$crud->set_table('pilihan');
+                        $crud->set_relation('pertanyaan_id', 'pertanyaan', 'pertanyaan_isi');
+                        $crud->display_as('pertanyaan_id', 'Pertanyaan');
+			$crud->set_subject('Pilihan');
+//			$crud->required_fields('city');
+//			$crud->columns('Pertanyaan','pertanyaan_isi','pilihan_isi');
+
+			$output = $crud->render();
+
+			$this->_example_output($output);
+
+		}catch(Exception $e){
+			show_error($e->getMessage().' --- '.$e->getTraceAsString());
+		}
+        }
+        
+       public function pertanyaan() {
+            try{
+			$crud = new grocery_CRUD();
+
+			$crud->set_theme('datatables');
+			$crud->set_table('pertanyaan');
+			$crud->set_subject('Pertanyaan');
+			$crud->required_fields('pertanyaan_isi');
+			$crud->columns('pertanyaan_kategori','pertanyaan_isi');
+
+			$output = $crud->render();
+
+			$this->_example_output($output);
+
+		}catch(Exception $e){
+			show_error($e->getMessage().' --- '.$e->getTraceAsString());
+		}
+        }
+        
+        public function register() {
+            try{
+			$crud = new grocery_CRUD();
+
+			$crud->set_theme('datatables');
+			$crud->set_table('user');
+			$crud->set_subject('User');
+//			$crud->required_fields('pertanyaan_isi');
+//			$crud->columns('pertanyaan_kategori','pertanyaan_isi');
+
+			$output = $crud->render();
+
+			$this->_example_output($output);
+
+		}catch(Exception $e){
+			show_error($e->getMessage().' --- '.$e->getTraceAsString());
+		}
+        }
 
 	public function offices()
 	{
