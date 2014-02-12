@@ -75,6 +75,10 @@
 							</div>
 						</td>
 					</tr>
+					<tr>
+						<td class="lbl-form"><span>Photo Profile:</span></td>
+						<td><button class="btn-upload">Upload Photo</button></td>
+					</tr>
 				</tbody>
 			</table>
 			<div class="list-question">
