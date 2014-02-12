@@ -31,7 +31,7 @@
 		<div class="myaccount">
 			<div class="profile-pict">
 				<div class="profile-pict-large"><img src="images/pp.jpg"/></div>
-				<div class="link-upload"><button>Upload Photo</button></div>
+				<div class="link-upload"><button class="btn-upload">Upload Photo</button></div>
 				<div class="profile-pict-thumbnail" id="slides">
 					<div>
 						<img src="<?php echo base_url('images/pp.jpg');?>"/>
