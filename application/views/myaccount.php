@@ -3,6 +3,8 @@
 
 <head>
     <?php $this->load->view('common/head') ?>
+    <script type="text/javascript" src="<?php echo base_url('uploadify/jquery.uploadify.min.js') ?> "></script>
+    <link rel="stylesheet" href="<?php echo base_url('uploadify/uploadify.css') ?>" type="text/css" media="screen"/>
     <link rel="stylesheet" href="<?php echo base_url('css/myaccount.css') ?>" type="text/css" media="screen"/>
     <script type="text/javascript" src="<?php echo base_url('js/organictabs.jquery.js') ?> "></script>
 	<script type="text/javascript">
@@ -29,7 +31,7 @@
 		<div class="myaccount">
 			<div class="profile-pict">
 				<div class="profile-pict-large"><img src="images/pp.jpg"/></div>
-				<div class="link-upload"><button class="btn-upload">Upload Photo</button></div>
+                                <div class="link-upload"><button id="file_upload" class="btn-upload">Upload Photo</button></div>
 				<div class="profile-pict-thumbnail" id="slides">
 					<div>
 						<img src="<?php echo base_url('images/pp.jpg');?>"/>
@@ -251,6 +253,21 @@
 	</div>
 	<div id="footer">
             <?php $this->load->view('common/footer') ?>
+            <script type="text/javascript">
+		<?php $timestamp = time();?>
+		$(function() {
+			$('#file_upload').uploadify({
+				'formData'     : {
+					'timestamp' : '<?php echo $timestamp;?>',
+					'token'     : '<?php echo md5('unique_salt' . $timestamp);?>',
+                                        'user_id'   : '<?php echo $user['user_id']; ?>'
+				},
+                                'buttonText': 'Upload Photo',
+				'swf'      : '<?php echo base_url('uploadify/uploadify.swf')?>',
+				'uploader' : '<?php echo base_url('uploadify/uploadify.php')?>'
+			});
+		});
+            </script>
 	</div>
 </div>
 </body>
