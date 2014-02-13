@@ -216,6 +216,34 @@ h2.page-title {
 .form table tr td {
 	padding: 5px 3px;
 }
+.myaccount {
+	margin-top: 30px;
+}
+.myaccount .pager {
+	margin: 10px 0;
+}
+.pager span.info {
+	display: block;
+	float: left;
+	margin-top: 10px;
+}
+.pager .pagination {
+	margin: 0 auto;
+	width: 210px;
+	padding-top: 10px;
+	text-align: center;
+}
+.pager .pagination a {
+	display: inline-block;
+	margin: 0 2px;
+}
+.pager .shown {
+	float: right;
+}
+.pager .shown a {
+	display: inline-block;
+	margin-top: 10px;
+}
 #form-contactus tr td.lbl-form {
 	width: 120px;
 }
