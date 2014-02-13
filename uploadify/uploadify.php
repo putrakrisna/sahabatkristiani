@@ -85,9 +85,9 @@ $verifyToken = md5('unique_salt' . $_POST['timestamp']);
         $image->setUploadDir($targetPath);
         $image->resize();
         $image->createFile($_POST['user_id']."_ori");
-        $image->resize(640);
+        $image->resize(300);
         $image->createFile($_POST['user_id']."_medium");
-        $image->resize(100);
+        $image->resize(75);
         $image->createFile($_POST['user_id']."_small");
         $image->flush();
     }
