@@ -1,4 +1,4 @@
-	<h1 class="logo">Jodoh Kristen</h1>
+	<h1 class="logo"><a href="<?php echo site_url();?>"><img src="<?php echo base_url('images/logo.png')?>"</a></h1>
 	<div class="header-menu">
 		<ul>
                     <li><a href="<?php echo site_url('welcome') ?>">Beranda</a></li>

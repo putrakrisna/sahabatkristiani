@@ -101,11 +101,17 @@
 .how-to-join ul li .step.three {
 	background-image: url(../images/3.png);
 }
+.follow-us {
+	margin-bottom: 30px;
+}
 .send-message .input-text {
 	margin-bottom: 5px;
 }
 .send-message .input-textarea {
 	margin-bottom: 8px;
+}
+.send-message .input-textarea textarea {
+	height: 150px;
 }
 .send-message .actions {
 	text-align: right;
