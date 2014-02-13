@@ -13,7 +13,7 @@
 			<li><a href="<?php echo site_url('pencarian') ?>">Cari</a></li>
 		</ul>
 		<ul class="right-nav">
-                    <li><span>Selamat datang</span>&nbsp;<a href="<?php echo site_url('account') ?>"><?php echo $login['user_fullname']?></a></li>
+                    <li><span>Selamat datang</span>&nbsp;<a href="<?php echo site_url('account') ?>"><?php echo $login['user_firstname']?></a></li>
 			<li><span>|</span></li>
                         <li><a href="<?php echo site_url('logout') ?>">Logout</a></li>
 		</ul>

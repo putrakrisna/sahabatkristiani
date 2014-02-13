@@ -59,10 +59,10 @@
 	margin-top: 3px;
 	padding: 5px 0 5px 28px;
 }
-.member a.male {
+.member a.pria {
 	background-image: url(../images/male.png);
 }
-.member a.female {
+.member a.wanita {
 	background-image: url(../images/female.png);
 }
 .profile-pict {
