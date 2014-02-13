@@ -8,6 +8,8 @@
 			<li><span>|</span></li>
 			<li><a href="<?php echo site_url('onlineuser') ?>">Anggota Online</a></li>
 			<li><span>|</span></li>
+			<li><a href="<?php echo site_url('onlineuser') ?>">Anggota Yang Cocok</a></li>
+			<li><span>|</span></li>
 			<li><a href="<?php echo site_url('pencarian') ?>">Cari</a></li>
 		</ul>
 		<ul class="right-nav">
