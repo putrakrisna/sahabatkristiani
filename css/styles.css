@@ -139,7 +139,8 @@ h2.page-title, .text h4 {
 	font-family: 'futuracondensed_medium';
 	
 	
-} h2.page-title {
+} 
+h2.page-title {
 	font-size: 34px;
 	border-bottom: 1px solid #f4f4f4;
 	padding-bottom: 25px;
