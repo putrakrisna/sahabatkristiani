@@ -25,12 +25,10 @@ class Welcome extends CI_Controller {
                 }
                 elseif ($this->input->post('btnSearch')) {
                     //bagian pencarian cepat
-                    $search['gender']       = $this->input->post('gender');
-                    $search['start_age']    = $this->input->post('start_age');
-                    $search['end_age']      = $this->input->post('end_age');
-                    $this->session->set_userdata('search',$search);
-                    
-                    print_r($this->input->post());die;
+                    $search['gender']       = $this->input->post('slcGender');
+                    $search['start_age']    = $this->input->post('slcAgeStart');
+                    $search['end_age']      = $this->input->post('slcAgeEnd');
+                    $this->cari($search);
                 }
             }
             else
@@ -38,6 +36,18 @@ class Welcome extends CI_Controller {
                 $this->load->view('index');
             }
 	}
+        
+        public function cari($search)
+        {
+            if($hasil = $this->user->cari_cepat($search['gender'],$search['start_age'],$search['end_age'])){
+                        $data['user'] = $hasil->result_array();
+                        $data['jml'] = $hasil->num_rows();
+                        $this->load->library('umur');
+                        $this->load->view('pencarian',$data);
+                    }else{
+                        $this->load->view('pencarian');
+                    }
+        }
         
         public function cek_db($password)
         {
