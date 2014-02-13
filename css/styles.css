@@ -45,6 +45,9 @@ h1.logo {
 input[type="checkbox"] {
 	margin-left: 0;
 }
+#content {
+	padding-bottom: 20px;
+}
 #nav {
 	margin: 10px 0 30px 0;
 }
@@ -117,7 +120,8 @@ button.button, input[type="submit"], a.button {
 	letter-spacing: 1px;
 }
 button.button, input[type="submit"] {
-	width: 100px;
+	width: auto;
+	margin: 0;
 }
 a.button {
 	display: block;
@@ -130,14 +134,21 @@ a.button {
 	width: auto;
 	padding: 10px;
 }
-h2.page-title {
-	font-size: 34px;
+h2.page-title, .text h4 {
 	color: #7e696d;
 	font-family: 'futuracondensed_medium';
-	text-transform: uppercase;
+	
+	
+} 
+h2.page-title {
+	font-size: 34px;
 	border-bottom: 1px solid #f4f4f4;
 	padding-bottom: 25px;
-} 
+	margin-top: 30px;
+	line-height: 34px;
+	text-transform: uppercase;
+}
+
 .date-pick, .dp-choose-date {
 	display: inline-block;
 }
@@ -156,8 +167,22 @@ h2.page-title {
 .text {
 	margin-top: 20px;
 }
-.text p {
+.text h4 {
+	font-size: 20px;
 	line-height: 20px;
+	margin-bottom: 10px;
+}
+.text p {
+	margin-bottom: 15px;
+	line-height: 20px;
+	text-align: justify;
+}
+
+.text p.pertanyaan {
+	margin-bottom: 0;
+}
+.form p {
+	
 }
 .list-message {
 	
@@ -184,6 +209,20 @@ h2.page-title {
 .message-action {
 	margin: 0 5px;
 	padding-top: 10px;	
+}
+.form table {
+	width: 100%;
+}
+
+.form table tr td {
+	padding: 5px 3px;
+}
+#form-contactus tr td.lbl-form {
+	width: 120px;
+}
+
+#form-contactus tr td textarea {
+	height: 240px;
 }
 #footer {
 	padding: 5px 10px 10px 10px;
