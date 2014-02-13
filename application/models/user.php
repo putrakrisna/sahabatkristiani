@@ -39,8 +39,20 @@ class User extends CI_Model{
             return TRUE;
         }
     }
-
-
+    
+    function cari_cepat($gender,$usia_start,$usia_end){
+        $this->db->where('user_tgl_lahir <=',date('Y-m-d',strtotime("-".$usia_start." year")));
+        $this->db->where('user_tgl_lahir >=',date('Y-m-d',strtotime("-".$usia_end." year")));
+        $this->db->where('user_gender',$gender);
+        $this->db->from('user_detail');
+        $this->db->join('user','user.user_id = user_detail.user_id');
+        $hasil = $this->db->get();
+        if($hasil->num_rows() > 0){
+            return $hasil ;
+        }else{
+            return false;
+        }
+    }
 
     function get_all($limit=NULL,$offset=NULL) {
         if(empty($limit) and empty($offset)):
