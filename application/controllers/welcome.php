@@ -60,16 +60,8 @@ class Welcome extends CI_Controller {
 
             if($result)
             {
-                $sess_array = array();
-                foreach($result as $row)
-                {
-                    $sess_array = array(
-                        'user_id' => $row->user_id,
-                        'user_fullname' => $row->user_fullname
-                    );
-                    $this->session->set_userdata('logged_in', $sess_array);
-                }
-            return TRUE;
+                $this->session->set_userdata($result);
+                return TRUE;
             }
             else
             {
