@@ -10,11 +10,13 @@ class Account extends CI_Controller {
 
     public function index()
 	{
-            $this->load->model(array('user','pertanyaan','pilihan','user_pertanyaan','grocery_crud_model'));
+            $this->load->model(array('user_detail','pertanyaan','pilihan','user_pertanyaan','grocery_crud_model','provinsi'));
+            $this->load->library('umur');
             $header['title']    = "My Account";
             $data['header']     = $header;
             
-            $data['user']       = $this->user->get_by_id($this->user_id);
+            $data['user']       = $this->user->get_by_id($this->user_id)->row_array();
+            $data['user_detail']       = $this->user_detail->get_by('user_id',$this->user_id)->row_array();
             $pertanyaan_all     = $this->pertanyaan->get_all()->result_array();
             foreach ($pertanyaan_all as $key => $value) {
                 $pertanyaan[$value['pertanyaan_id']] = $value['pertanyaan_isi'];
@@ -33,6 +35,8 @@ class Account extends CI_Controller {
             $data['pertanyaan_all'] = $pertanyaan;
             $data['pilihan'] = $pilihan;
             $data['jawaban'] = $jawaban;
+            $kota = $this->provinsi->get_by_id($data['user_detail']['user_kota'])->row_array();
+            $data['user_detail']['user_kota'] = $kota['provinsi'];
 //            print_r($data);die;
             $this->load->view('myaccount',$data);
 	}
