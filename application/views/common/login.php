@@ -1,5 +1,4 @@
-<?php  $login = $this->session->userdata('logged_in');?>
-<?php if(!$login['user_id']):?>
+<?php if($this->session->userdata('user_id') == null):?>
 <div class="login">
     <form method="POST" action=""  accept-charset="utf-8">
         <h4>Login <span>Member</span></h4>
