@@ -22,7 +22,7 @@ class User extends CI_Model{
 
       if($query -> num_rows() == 1)
       {
-        return $query->result();
+        return $query->row();
       }
       else
       {
@@ -31,12 +31,11 @@ class User extends CI_Model{
     }
     
     function cek_login() {
-        $login = $this->session->userdata('logged_in');
-        if(empty($login)){
-            return FALSE;
+        if($this->session->userdata('user_id')){
+            return TRUE;
         }
         else{
-            return TRUE;
+            return FALSE;
         }
     }
     
