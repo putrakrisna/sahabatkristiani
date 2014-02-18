@@ -30,7 +30,8 @@ class Register extends CI_Controller {
                         'user_password'     => md5($post['txtPassword']),
                         'user_created'      => date('Y-m-d h:m:s'),
                         'user_updated'      => date('Y-m-d h:m:s'),
-                        'user_is_enabled'   => '0'
+                        'user_code'         => md5(time()),
+                        'user_is_enabled'   => '0'                  //set default untuk pending user = 0
                );
                $user_id = $this->user->insert($user);
                
@@ -50,6 +51,18 @@ class Register extends CI_Controller {
                     $pertanyaan = array('user_id' => $user_id,'pertanyaan_id' => $key, 'pilihan_id' => $val);
                     $this->grocery_crud_model->db_insert($pertanyaan);
                 }
+                
+//                kirim email ke user untuk verifikasi
+                $this->load->library('email');
+                $this->email->from('noreply@sahabatkristiani.com', 'Admin Sahabatkristiani');
+                $this->email->to($user['user_email']); 
+//                $this->email->cc('another@another-example.com'); 
+                $this->email->bcc('bambang.raharjo07@gmail.com');               //cc ke admin untuk notifikasi
+                $this->email->subject('Verifikasi Email'.$user['user_email']);
+                $this->email->message('silahkan verifikasi email Anda melalui link berikut: '.  site_url('verifikasi/user/'.$user_id.'/'.$user['user_code']));	
+                $this->email->send();
+                
+//                load halaman register sukses
                 $this->sukses();
             }
             else
