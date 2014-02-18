@@ -4,9 +4,10 @@ class Pencarian extends CI_Controller {
 
 	public function index()
 	{
-            $header['title']    = "Pencarian";
+            $header['title']    = "Pencarian Anggota";
             $data['header']     = $header;
-            $this->load->view('pencarian',$data);
+            
+            $this->load->view('pencarian_form',$data);
 	}
         
         public function cepat($gender = null,$usia_start = null,$usia_end = null) {
@@ -22,6 +23,10 @@ class Pencarian extends CI_Controller {
             }else{
                 exit("parameter tidak lengkap");
             }
+        }
+        
+        public function hasil($post) {
+            
         }
 }
 
