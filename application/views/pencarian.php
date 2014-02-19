@@ -18,7 +18,7 @@
 		<h2 class="page-title">Pencarian Member</h2>
 		<div class="myaccount">
 			<div class="pager">
-                            <span class="info">Ditemukan <?php echo isset($user) ? $jml : '0'; ?> anggota </span>
+                            <span class="info">Ditemukan <?php echo !empty($user) ? $jml : '0'; ?> anggota </span>
 				<div class="shown">
 					<div class="select-option">
 						<select>
@@ -46,13 +46,15 @@
                     <div class="members">
 				<ul>
                                         <?php foreach($user as $row): ?>
+                                                <?php if($row['user_id'] != $this->session->userdata('user_id')): ?>
 					<li class="item">
 						<div class="member">
 							<span class="lbl-newmember"></span>
-                                                        <a href="<?php echo site_url(); ?>" class="member-image"><img src="<?php echo base_url('images/thumbnail.jpg'); ?>"/></a>
+                                                        <a href="<?php echo site_url('account/user/'.$row['user_id']); ?>" class="member-image"><img src="<?php echo base_url('images/thumbnail.jpg'); ?>"/></a>
                                                         <a href="<?php echo site_url(); ?>" class="member-name <?php echo $row['user_gender']; ?>"><?php echo $row['user_firstname'].' ('.$this->umur->cekUmur($row['user_tgl_lahir']) .')'; ?> </a>
 						</div>
 					</li>
+                                                <?php endif; ?>
                                         <?php endforeach; ?>
 					
 					<div class="clear"></div>

@@ -40,6 +40,9 @@ class User extends CI_Model{
     }
     
     function cari_cepat($gender,$usia_start,$usia_end){
+        if($this->session->userdata('user_id')){
+            $this->db->where('user.user_id !=',$this->session->userdata('user_id'));
+        }
         $this->db->where('user_tgl_lahir <=',date('Y-m-d',strtotime("-".$usia_start." year")));
         $this->db->where('user_tgl_lahir >=',date('Y-m-d',strtotime("-".$usia_end." year")));
         $this->db->where('user_gender',$gender);
@@ -55,15 +58,31 @@ class User extends CI_Model{
 
     function get_all($limit=NULL,$offset=NULL) {
         if(empty($limit) and empty($offset)):
-            return $this->db->get($this->table);
+            $hasil =  $this->db->get($this->table);
+            if($hasil->num_rows() > 0){
+                return $hasil ;
+            }else{
+                return false;
+            }
         else:
-            return $this->db->get($this->table,$limit,$offset);
+            $hasil =  $this->db->get($this->table,$limit,$offset);
+            if($hasil->num_rows() > 0){
+                return $hasil ;
+            }else{
+                return false;
+            }
         endif;
     }
     
     function get_by_id($id){
         $this->db->where($this->id,$id);
-        return $this->db->get($this->table);
+        $hasil =  $this->db->get($this->table);
+        if($hasil->num_rows() > 0){
+            return $hasil ;
+        }else{
+            return false;
+        }
+        
     }
 	
     function insert(array $data){
