@@ -58,7 +58,7 @@ class Register extends CI_Controller {
                 $this->email->to($user['user_email']); 
 //                $this->email->cc('another@another-example.com'); 
                 $this->email->bcc('bambang.raharjo07@gmail.com');               //cc ke admin untuk notifikasi
-                $this->email->subject('Verifikasi Email'.$user['user_email']);
+                $this->email->subject('Verifikasi Email '.$user['user_email']);
                 $this->email->message('silahkan verifikasi email Anda melalui link berikut: '.  site_url('verifikasi/user/'.$user_id.'/'.$user['user_code']));	
                 $this->email->send();
                 
