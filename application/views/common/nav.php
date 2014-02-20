@@ -1,7 +1,7 @@
 <?php if($this->session->userdata('user_id')):?>
 <div id="nav">
 		<ul class="left-nav">
-			<li><a href="<?php echo site_url('surat') ?>">Kotak Surat</a></li>
+			<li><a href="<?php echo site_url('pesan') ?>">Kotak Surat</a></li>
 			<li><span>|</span></li>
 			<li><a href="<?php echo site_url('chat') ?>">Chatbox</a></li>
 			<li><span>|</span></li>

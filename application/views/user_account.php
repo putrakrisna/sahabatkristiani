@@ -26,7 +26,7 @@
 	</div>
 	<?php $this->load->view('common/nav') ?>
 	<div id="content">
-		<h2 class="page-title">My Account</h2>
+            <h2 class="page-title"><?php echo $user['user_firstname'].' '.$user['user_lastname']; ?></h2>
 		<div class="myaccount">
 			<div class="profile-pict">
                             <div class="profile-pict-large"><img src="<?php echo site_url('images/pp.jpg'); ?>"/></div>
@@ -48,7 +48,7 @@
 				</div>
 			</div>
 			<div class="member-desc">
-                            <div class="member-name male"><?php echo $user['user_firstname']; ?> / <?php echo $this->umur->cekUmur($user_detail['user_tgl_lahir']); ?>  / <?php echo $user_detail['user_kota']; ?>  <span class="online-now"></span></div>
+                            <div class="member-name <?php echo $user_detail['user_gender']; ?> "><?php echo $user['user_firstname']; ?> / <?php echo $this->umur->cekUmur($user_detail['user_tgl_lahir']); ?>  / <?php echo $user_detail['user_kota']; ?>  <span class="online-now"></span></div>
 				<div class="member-info">
 					<div class="clear"></div>
 					<table>
@@ -73,7 +73,17 @@
 								<td></td>
 								<td>
 									<div class="actions">
-										<input type="submit" name="btnAdd" class="button" value="Tambahkan teman"/>
+                                                                            <form action="<?php echo site_url('teman'); ?>" method="post" title="" >
+                                                                                <input type="hidden" name="user_id" value="<?php echo $user['user_id']; ?>"/>
+                                                                                <?php if(!isset($relasi)):  ?>
+                                                                                <input type="submit" name="btnTambah" class="button" value="Tambahkan teman"/>
+                                                                                <?php endif; ?>
+                                                                                <input type="submit" name="btnPesan" class="button" value="Kirim Pesan"/>
+                                                                                <input type="submit" name="btnSenyuman" class="button" value="Kirim Senyuman"/>
+                                                                                <?php if(isset($relasi) and $relasi == '1'):  ?>
+                                                                                <input type="submit" name="btnBlock" class="button" value="Block User"/>
+                                                                                <?php endif; ?>
+                                                                            </form>
 									</div>
 								</td>
 							</tr>
