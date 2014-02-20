@@ -9,7 +9,7 @@ class Account extends CI_Controller {
     }
 
     public function index()
-	{
+    {
             $this->load->model(array('user_detail','pertanyaan','pilihan','user_pertanyaan','grocery_crud_model','provinsi'));
             $this->load->library('umur');
             $header['title']    = "My Account";
@@ -39,7 +39,28 @@ class Account extends CI_Controller {
             $data['user_detail']['user_kota'] = $kota['provinsi'];
 //            print_r($data);die;
             $this->load->view('myaccount',$data);
-	}
+            
+      }
+        
+    public function user($user_id = NULL) {
+        if($user_id == NULL){
+            $this->index();
+        }else{
+            $user_tmp = $this->user->get_by_id($user_id);
+//            print_r($user_tmp);die;
+            if($user_tmp){
+                $data['user']          = $user_tmp->row_array();
+                $this->load->model('user_detail');
+                $data['user_detail']        = $this->user_detail->get_by('user_id',$user_id)->row_array();
+                $this->load->model('user_pertanyaan');
+                $data['user_pertanyaan']    = $this->user_pertanyaan->get_by('user_id',$user_id)->result_array();
+                $this->load->library('umur');
+                $header['title']    = "My Account";
+                $data['header']     = $header;
+                $this->load->view('user_account',$data);
+            }
+        }
+    }
 }
 
 /* End of file account.php */
