@@ -46,7 +46,6 @@
                     <div class="members">
 				<ul>
                                         <?php foreach($user as $row): ?>
-                                                <?php if($row['user_id'] != $this->session->userdata('user_id')): ?>
 					<li class="item">
 						<div class="member">
 							<span class="lbl-newmember"></span>
@@ -54,7 +53,6 @@
                                                         <a href="<?php echo site_url(); ?>" class="member-name <?php echo $row['user_gender']; ?>"><?php echo $row['user_firstname'].' ('.$this->umur->cekUmur($row['user_tgl_lahir']) .')'; ?> </a>
 						</div>
 					</li>
-                                                <?php endif; ?>
                                         <?php endforeach; ?>
 					
 					<div class="clear"></div>

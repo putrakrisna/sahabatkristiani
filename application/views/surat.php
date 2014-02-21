@@ -53,12 +53,17 @@
 					</tr>
 				</thead>
 				<tbody>
+                                    <?php if(isset($surat_all)): ?>
+                                        <?php foreach($surat_all as $surat): ?>
 					<tr>
-						<td class="checkbox"><input type="checkbox" name="selectMessage"/></td>
-						<td><a href="#">Lorem ipsum dollor sit amet</a></td>
-						<td>Username</td>
-						<td>08:00</td>
+                                            <td class="checkbox"><input type="checkbox" name="surat_id" value="<?php echo $surat['surat_id']; ?>"/></td>
+                                                <td><a href="#"><?php echo $surat['surat_judul']; ?></a></td>
+                                                <?php $pengirim = $this->user->get_by_id($surat['surat_pengirim'])->row_array(); ?>
+                                                <td><?php echo $pengirim['user_firstname'];?></td>
+                                                <td><?php echo $surat['surat_tgl_kirim']; ?></td>
 					</tr>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
 				</tbody>
 			</table>
 			<div class="message-action"><a href="#">Delete</a></div>
