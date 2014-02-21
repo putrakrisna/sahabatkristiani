@@ -47,7 +47,12 @@ class Account extends CI_Controller {
             $this->index();
         }else{
             $user_tmp = $this->user->get_by_id($user_id);
-//            print_r($user_tmp);die;
+            $this->load->model(array('user_detail','pertanyaan','pilihan','user_pertanyaan','grocery_crud_model','provinsi'));
+            $this->load->model('friendship');
+            if($this->friendship->get_relation($this->session->userdata('user_id'),$user_id)){
+                $relasi = $this->friendship->get_relation($this->session->userdata('user_id'),$user_id)->row_array();
+                $data['relasi'] = $relasi['status'];
+            }
             if($user_tmp){
                 $data['user']          = $user_tmp->row_array();
                 $this->load->model('user_detail');
@@ -55,7 +60,27 @@ class Account extends CI_Controller {
                 $this->load->model('user_pertanyaan');
                 $data['user_pertanyaan']    = $this->user_pertanyaan->get_by('user_id',$user_id)->result_array();
                 $this->load->library('umur');
-                $header['title']    = "My Account";
+                $pertanyaan_all     = $this->pertanyaan->get_all()->result_array();
+                foreach ($pertanyaan_all as $key => $value) {
+                    $pertanyaan[$value['pertanyaan_id']] = $value['pertanyaan_isi'];
+                }
+
+                $pilihan_all    = $this->pilihan->get_all()->result_array();
+                foreach ($pilihan_all as $key => $value) {
+                    $pilihan[$value['pertanyaan_id']][$value['pilihan_id']] = $value['pilihan_isi'];
+                }
+
+                $jawaban_all        = $this->user_pertanyaan->get_by('user_id',$user_id)->result_array();
+                foreach ($jawaban_all as $row ) {
+                    $jawaban[$row['pertanyaan_id']] = $row['pilihan_id'];
+                }
+
+                $data['pertanyaan_all'] = $pertanyaan;
+                $data['pilihan'] = $pilihan;
+                $data['jawaban'] = $jawaban;
+                $kota = $this->provinsi->get_by_id($data['user_detail']['user_kota'])->row_array();
+                $data['user_detail']['user_kota'] = $kota['provinsi'];
+                $header['title']    = $data['user']['user_firstname'].' '.$data['user']['user_lastname'].'\'s profile';
                 $data['header']     = $header;
                 $this->load->view('user_account',$data);
             }

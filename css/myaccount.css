@@ -118,10 +118,10 @@
 	border-bottom: 1px solid #f4f4f4;
 	padding-bottom: 10px;
 }
-.member-name.male {
+.member-name.pria {
 	background: url(../images/male.png) no-repeat left top;
 }
-.member-name.female {
+.member-name.wanita {
 	background: url(../images/female.png) no-repeat left top;
 }
 .member-name span.online-now {

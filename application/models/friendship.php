@@ -13,9 +13,31 @@ class Friendship extends CI_Model{
     function add_friend($id_calon_teman){
         $data['inviter_id'] = $this->session->userdata('user_id');
         $data['friend_id']  = $id_calon_teman;
-        $data['status']     = '1';  // 0 = pending; 1=approved; 2=rejected;
-        $this->insert($data);
-        return TRUE;
+        $this->db->where($data);
+        $cek = $this->db->get($this->table);
+        if($cek->num_rows() < 1){
+            $data['status']     = '1';  // 0 = pending; 1=approved; 2=block;
+            $friendship_id = $this->insert($data);
+            return $friendship_id;
+        }else{
+            return false;
+        }
+    }
+    
+    function block_friend($user_id) {
+        
+        $data['inviter_id'] = $this->session->userdata('user_id');
+        $data['friend_id']  = $user_id;
+        $this->db->where($data);
+        $cek = $this->db->get($this->table);
+        if($cek->num_rows() > 0){
+            
+            $data['status']     = '2';  // 0 = pending; 1=approved; 2=block;
+            $this->update($data);
+            return TRUE;
+        }else{
+            return false;
+        }
     }
     
     function get_list_friend(){
@@ -23,12 +45,25 @@ class Friendship extends CI_Model{
         $this->db->where('inviter_id',$this->session->userdata('user_id'));
         $hasil = $this->db->get($this->table);
             if($hasil->num_rows() > 0){
-                $h = $hasil->result_array();
-                return $h ;
+                foreach ($hasil->result_array() as $user_all){
+                    $user[] = $this->user->get_by_id($user_all['friend_id'])->row_array();
+                }
+                return $user ;
             }else{
                 return false;
             }
         
+    }
+    
+    function get_relation($inviter_id,$friend_id){
+        $this->db->where('friend_id',$friend_id);
+        $this->db->where('inviter_id',$this->session->userdata('user_id'));
+        $hasil = $this->db->get($this->table);
+        if($hasil->num_rows() > 0){
+                return $hasil ;
+            }else{
+                return false;
+            }
     }
     
     function delete_friend($friend_id){
@@ -115,4 +150,4 @@ class Friendship extends CI_Model{
 	
 }
   
-?>
+/* E O F */

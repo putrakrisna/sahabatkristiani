@@ -7,7 +7,7 @@ class Umur {
         
         list($tahun,$bulan,$nohari)=explode('-',$tglHariIni);
         $jdetikHariIni=mktime(0,0,0,$bulan,$nohari,$tahun);
-        $jTahun=floor(($jdetikHariIni-$jdetikLahir)/86400/365.25);
+        $jTahun=ceil(($jdetikHariIni-$jdetikLahir)/86400/365.25);
         return $jTahun;
     }
 }
