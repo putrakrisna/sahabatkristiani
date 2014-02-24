@@ -36,8 +36,14 @@ class Teman extends CI_Controller {
         
         public function daftar() {
             $this->load->model('friendship');
-            $teman = $this->friendship->get_list_friend();
-            print_r($teman);die;
+            $data['user'] = $this->friendship->get_list_friend();
+            if($data['user']){
+                $data['jml'] = count($data['user']);
+                $this->load->library('umur');
+                $this->load->view('pencarian',$data);
+            }else{
+                exit('kamu belum berteman dengan siapapun');
+            }
             
         }
 }
