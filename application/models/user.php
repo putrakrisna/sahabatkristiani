@@ -84,6 +84,17 @@ class User extends CI_Model{
         }
         
     }
+    
+    function get_detail_by_id($id){
+        $this->db->where($this->table.'.'.$this->id,$id);
+        $this->db->join('user_detail', 'user_detail.user_id = user.user_id');
+        $hasil =  $this->db->get($this->table);
+        if($hasil->num_rows() > 0){
+            return $hasil ;
+        }else{
+            return false;
+        }
+    }
 	
     function insert(array $data){
          if(empty($data)):
