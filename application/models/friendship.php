@@ -46,7 +46,7 @@ class Friendship extends CI_Model{
         $hasil = $this->db->get($this->table);
             if($hasil->num_rows() > 0){
                 foreach ($hasil->result_array() as $user_all){
-                    $user[] = $this->user->get_by_id($user_all['friend_id'])->row_array();
+                    $user[] = $this->user->get_detail_by_id($user_all['friend_id'])->row_array();
                 }
                 return $user ;
             }else{
