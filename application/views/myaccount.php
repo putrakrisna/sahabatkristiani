@@ -30,7 +30,13 @@
 		<h2 class="page-title">My Account</h2>
 		<div class="myaccount">
 			<div class="profile-pict">
-				<div class="profile-pict-large"><img src="images/pp.jpg"/></div>
+				<div class="profile-pict-large">
+                                    <?php if ($photo): ?>
+                                    <img src="<?php echo $photo ?>"/>
+                                    <?php else: ?>
+                                    <img src="images/pp.jpg"/>
+                                    <?php endif; ?>
+                                </div>
                                 <div class="link-upload"><button id="file_upload" class="btn-upload">Upload Photo</button></div>
 				<div class="profile-pict-thumbnail" id="slides">
 					<div>
@@ -264,7 +270,10 @@
 				},
                                 'buttonText': 'Upload Photo',
 				'swf'      : '<?php echo base_url('uploadify/uploadify.swf')?>',
-				'uploader' : '<?php echo base_url('uploadify/uploadify.php')?>'
+				'uploader' : '<?php echo base_url('uploadify/uploadify.php')?>',
+                                'onUploadComplete': function() {
+                                    location.reload();
+                                }
 			});
 		});
             </script>
