@@ -65,10 +65,10 @@
 </div>
         
         <!--end content-->
-        </div>
 	<div id="footer">
             <?php $this->load->view('common/footer') ?>
 	</div>
+        </div>
 </div>
 </body>
 </html>
