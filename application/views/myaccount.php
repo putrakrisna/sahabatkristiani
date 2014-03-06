@@ -56,7 +56,7 @@
 				</div>
 			</div>
 			<div class="member-desc">
-                            <div class="member-name male"><?php echo $user['user_firstname']; ?> / <?php echo $this->umur->cekUmur($user_detail['user_tgl_lahir']); ?>  / <?php echo $user_detail['user_kota']; ?>  <span class="online-now"></span></div>
+                            <div class="member-name"><?php echo $user['user_firstname']; ?> / <?php echo $this->umur->cekUmur($user_detail['user_tgl_lahir']); ?>  / <?php echo $user_detail['user_kota']; ?>  <span class="online-now"></span></div>
 				<div class="member-info">
 					<a href="#" class="link-edit">Edit Info</a>
 					<div class="clear"></div>
