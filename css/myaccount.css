@@ -51,13 +51,16 @@
 	overflow: hidden;
 }
 .member a.member-name {
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: bold;
+	height: 24px;
+	line-height: 24px;
+	background-size: 24px auto;
 	background-position: left center;
 	background-repeat: no-repeat;
 	color: #7e696d;
 	margin-top: 3px;
-	padding: 5px 0 5px 28px;
+	padding: 0 0 0 28px;
 }
 .member a.pria {
 	background-image: url(../images/male.png);
