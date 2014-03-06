@@ -68,6 +68,14 @@
 .member a.wanita {
 	background-image: url(../images/female.png);
 }
+.member a.link-chat {
+	font-family: 'futuracondensed_medium';
+	font-size: 14px;
+	color: #7e696d;
+	margin-top: 3px;
+	text-align: center;
+	letter-spacing: 1px;
+}
 .profile-pict {
 	float: left;
 	width: 298px;
