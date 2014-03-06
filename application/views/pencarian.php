@@ -51,6 +51,7 @@
 							<span class="lbl-newmember"></span>
                                                         <a href="<?php echo site_url('account/user/'.$row['user_id']); ?>" class="member-image"><img src="<?php echo base_url('images/thumbnail.jpg'); ?>"/></a>
                                                         <a href="<?php echo site_url(); ?>" class="member-name <?php echo $row['user_gender']; ?>"><?php echo $row['user_firstname'].' ('.$this->umur->cekUmur($row['user_tgl_lahir']) .')'; ?> </a>
+                                                        <a href="#" class="link-chat">Chat</a>
 						</div>
 					</li>
                                         <?php endforeach; ?>
