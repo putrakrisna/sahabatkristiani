@@ -37,7 +37,7 @@ class Account extends CI_Controller {
             $data['jawaban'] = $jawaban;
             $kota = $this->provinsi->get_by_id($data['user_detail']['user_kota'])->row_array();
             $data['user_detail']['user_kota'] = $kota['provinsi'];
-            file_exists(FCPATH.'uploads\\'.$this->user_id.'_medium.png') ?  $data['photo'] = base_url('uploads/'.$this->user_id.'_medium.png') : $data['photo'] = FALSE;
+            file_exists(FCPATH.'uploads/'.$this->user_id.'_medium.png') ?  $data['photo'] = base_url('uploads/'.$this->user_id.'_medium.png') : $data['photo'] = FALSE;
 //            print_r($data['photo']);die;
             $this->load->view('myaccount',$data);
             
