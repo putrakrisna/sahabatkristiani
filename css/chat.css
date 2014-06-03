@@ -1,0 +1,69 @@
+.chat-room {
+	width: 640px;
+	margin: 20px auto;
+	border: 1px solid #dadada;
+}
+.chat-room .chat-header {
+	background: #8a697c;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: 'futuracondensed_medium';
+	font-size: 24px;
+	padding: 15px 20px;
+}
+.chat-room .chat-box {
+	float: left;
+	width: 60%;
+}
+.chat-room .chat-list {
+	float: right;
+	height: 500px;
+	width: 30%;
+	border-left: 1px solid #dadada;
+	overflow: auto;
+}
+.chat-room .chat-list ul {
+	margin: 10px;
+}
+.chat-room .chat-list ul li {
+	margin: 3px 0 0 0;
+}
+.chat-room .chat-list ul li:first-child {
+	margin-top: 0;
+}
+.chat-room .chat-list ul li {
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 24px auto;
+	padding-left: 28px;
+}
+.chat-room .chat-list ul li.male {
+	background-image: url(../images/male.png);
+}
+.chat-room .chat-list ul li.female {
+	background-image: url(../images/female.png);
+}
+.chat-room .chat-list ul li a {
+	display: inline-block;
+	height: 24px;
+	line-height: 24px;
+}
+.chat-room .chat-list ul li a.new-chat {
+	background: url(../images/new-chat.png) no-repeat right center;
+	padding-right: 24px;
+}
+
+.chat-room .chat-type {
+	padding: 10px;
+	border-top: 1px solid #dadada;
+}
+.chat-room .chat-type textarea {
+	border: 1px solid #dadada;
+	height: 30px;
+	width: 82%;
+	float: left;
+}
+.chat-room .chat-type input[type="submit"] {
+	float: right;
+	margin: 0;
+}
